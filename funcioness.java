@@ -7,8 +7,8 @@
  * 
  */
 
-public class FUNCION3 {
-	public FUNCION3() {
+public class funcioness {
+	public funcioness() {
 	}
 
 	public int funcion3(int[] numerosintroducidos) {

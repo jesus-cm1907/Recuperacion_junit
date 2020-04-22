@@ -1,4 +1,4 @@
-package pruebas;
+package Pruebas;
 
 public class funcioness {
 
@@ -130,4 +130,23 @@ public class funcioness {
 
 		return resultado;
 	}
+
+		public static int Entornos5(String caracter, int numero1, int numero2) {
+
+			int valor = 0;
+
+			if (caracter == "+") {
+
+				valor = numero1 + numero2;
+
+			} else if (caracter == "-") {
+
+				valor = numero1 - numero2;
+
+			} else if (caracter == "*") {
+
+				valor = numero1 * numero2;
+			}
+			return valor;
+		}
 }

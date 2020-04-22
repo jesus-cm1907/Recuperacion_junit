@@ -1,4 +1,4 @@
-package PruebaFunciones;
+package PruebasFinal;
 
 import static org.junit.jupiter.api.Assertions.*;
 

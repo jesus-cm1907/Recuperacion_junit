@@ -12,8 +12,8 @@
  * 
  * 
  */
-public class FUNCION5 {
-	public FUNCION5() {
+public class funcioness {
+	public funcioness() {
 	}
 
 	public int funcion5(String caracter, int numero1, int numero2) {

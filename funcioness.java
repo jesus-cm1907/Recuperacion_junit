@@ -13,11 +13,11 @@ public class funcioness {
 			if (numerosintroducidos[i] >= (miEdad / 2) && numerosintroducidos[i] <= miEdad) {
 
 				sumatorio += numerosintroducidos[i];
-        	}
+			}
 		}
 		return sumatorio;
-	} 
-  
+	}
+
 	public static String Entornos2(String palabra1, String palabra2) {
 
 		int contadorConsonantes1 = 0;
@@ -61,6 +61,7 @@ public class funcioness {
 
 		return contador;
 	}
+
 	public static Boolean Entornos1(String palabra) {
 
 		int contador = 0;
@@ -87,5 +88,46 @@ public class funcioness {
 
 		return result;
 
+	}
+
+	public static String Entornos4(int[] counter) {
+
+		int sum = 0;
+
+		int media;
+
+		String resultado = null;
+
+		for (int x = 0; x < counter.length; x++) {
+
+			sum += counter[x];
+
+		}
+
+		media = sum / counter.length;
+
+		if (media < 5) {
+
+			resultado = "Insuficiente";
+
+		} else if (media <= 5 && media < 6) {
+
+			resultado = "Suficiente";
+
+		} else if (media >= 6 && media < 7) {
+
+			resultado = "Bien";
+
+		} else if (media >= 7 && media < 9) {
+
+			resultado = "Notabale";
+
+		} else if (media >= 9 && media == 10) {
+
+			resultado = "Sobresaliente";
+
+		}
+
+		return resultado;
 	}
 }

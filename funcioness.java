@@ -1,23 +1,100 @@
-/**
- * 
- * FUNCION QUE DADA UNA LISTA DE NOTAS ,DEVUELVA UNA CADENA INDICANDO SI LA
- * 
- * NOTA MEDIA HA SIDO INSUFICIENTE(<5),SUFICIENTE(>=5 y <6) BIEN (>=6 y
- * 
- * >7),NOTABLE(>=7 y <9) o SOBRESALIENTE(>=9 y 10)-
- * 
- * 
- * 
- */
+package pruebas;
+
 public class funcioness {
-	public funcioness() {
+
+	public static int Entornos3(int[] numerosintroducidos) {
+
+		int miEdad = 19;
+
+		int sumatorio = 0;
+
+		for (int i = 0; i < numerosintroducidos.length; i++) {
+
+			if (numerosintroducidos[i] >= (miEdad / 2) && numerosintroducidos[i] <= miEdad) {
+
+				sumatorio += numerosintroducidos[i];
+			}
+		}
+		return sumatorio;
 	}
 
-	public String funcion4(int[] counter) {
+	public static String Entornos2(String palabra1, String palabra2) {
 
-		float sum = 0;
+		int contadorConsonantes1 = 0;
 
-		double media;
+		int contadorConsonantes2 = 0;
+
+		String result = null;
+
+		contadorConsonantes1 = contarConsonantes(palabra1);
+
+		contadorConsonantes2 = contarConsonantes(palabra2);
+
+		if (contadorConsonantes1 > contadorConsonantes2) {
+
+			result = palabra1;
+
+		} else if (contadorConsonantes1 < contadorConsonantes2) {
+
+			result = palabra2;
+
+		}
+
+		return result;
+
+	}
+
+	private static int contarConsonantes(String cadena) {
+
+		int contador = 0;
+
+		for (int i = 0; i < cadena.length(); i++) {
+
+			if ((cadena.charAt(i) != 'a') && (cadena.charAt(i) != 'e') && (cadena.charAt(i) != 'o')
+
+					&& (cadena.charAt(i) != 'i') && (cadena.charAt(i) != 'u')) {
+
+				contador++;
+			}
+
+		}
+
+		return contador;
+	}
+
+	public static Boolean Entornos1(String palabra) {
+
+		int contador = 0;
+		int edad = 19;
+		Boolean result = null;
+
+		for (int i = 0; i < palabra.length(); i++) {
+
+			if ((palabra.charAt(i) == 'a') || (palabra.charAt(i) == 'e') || (palabra.charAt(i) == 'i')
+
+					|| (palabra.charAt(i) == 'o' || (palabra.charAt(i) == 'u'))) {
+
+				contador++;
+				if (contador >= edad) {
+					result = true;
+				} else {
+					result = false;
+
+				}
+
+			}
+
+		}
+
+		return result;
+
+	}
+
+	public static String Entornos4(int[] counter) {
+
+		int sum = 0;
+
+		int media;
 
 		String resultado = null;
 
@@ -52,6 +129,5 @@ public class funcioness {
 		}
 
 		return resultado;
-
 	}
 }

@@ -9,8 +9,8 @@
  * 
  * 
  */
-public class FUNCION4 {
-	public FUNCION4() {
+public class funcioness {
+	public funcioness() {
 	}
 
 	public String funcion4(int[] counter) {

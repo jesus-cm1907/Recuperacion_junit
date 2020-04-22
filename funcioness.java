@@ -1,14 +1,8 @@
+package pruebas;
 
-/**
- * 
- * FUNCION QUE DADA DOS CADENAS NOS DEVUELVA CUAL TIENE MAS CONSONANTES
- * 
- */
 public class funcioness {
-	public funcioness() {
-	}
 
-	public String Entornos2(String palabra1, String palabra2) {
+	public static String Entornos2(String palabra1, String palabra2) {
 
 		int contadorConsonantes1 = 0;
 
@@ -34,7 +28,7 @@ public class funcioness {
 
 	}
 
-	private int contarConsonantes(String cadena) {
+	private static int contarConsonantes(String cadena) {
 
 		int contador = 0;
 
@@ -51,6 +45,34 @@ public class funcioness {
 		}
 
 		return contador;
+
+	}
+
+	public static Boolean Entornos1(String palabra) {
+
+		int contador = 0;
+		int edad = 19;
+		Boolean result = null;
+
+		for (int i = 0; i < palabra.length(); i++) {
+
+			if ((palabra.charAt(i) == 'a') || (palabra.charAt(i) == 'e') || (palabra.charAt(i) == 'i')
+
+					|| (palabra.charAt(i) == 'o' || (palabra.charAt(i) == 'u'))) {
+
+				contador++;
+				if (contador >= edad) {
+					result = true;
+				} else {
+					result = false;
+
+				}
+
+			}
+
+		}
+
+		return result;
 
 	}
 }

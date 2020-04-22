@@ -2,6 +2,22 @@ package pruebas;
 
 public class funcioness {
 
+	public static int Entornos3(int[] numerosintroducidos) {
+
+		int miEdad = 19;
+
+		int sumatorio = 0;
+
+		for (int i = 0; i < numerosintroducidos.length; i++) {
+
+			if (numerosintroducidos[i] >= (miEdad / 2) && numerosintroducidos[i] <= miEdad) {
+
+				sumatorio += numerosintroducidos[i];
+        	}
+		}
+		return sumatorio;
+	} 
+  
 	public static String Entornos2(String palabra1, String palabra2) {
 
 		int contadorConsonantes1 = 0;
@@ -39,15 +55,12 @@ public class funcioness {
 					&& (cadena.charAt(i) != 'i') && (cadena.charAt(i) != 'u')) {
 
 				contador++;
-
 			}
 
 		}
 
 		return contador;
-
 	}
-
 	public static Boolean Entornos1(String palabra) {
 
 		int contador = 0;

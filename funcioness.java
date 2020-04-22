@@ -4,8 +4,8 @@
  * FUNCION QUE DADA DOS CADENAS NOS DEVUELVA CUAL TIENE MAS CONSONANTES
  * 
  */
-public class FUNCION2 {
-	public FUNCION2() {
+public class funcioness {
+	public funcioness() {
 	}
 
 	public String Entornos2(String palabra1, String palabra2) {

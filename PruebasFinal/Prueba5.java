@@ -1,4 +1,4 @@
-package Pruebas;
+package PruebasFinal;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.DisplayName;
 
 public class Prueba5 {
 
-	static FUNCIONES FUNCIONES = null;
+	static funcioness funcioness = null;
 	static int ejecucionpruebas = 0;
 
 	@BeforeAll
@@ -25,7 +25,7 @@ public class Prueba5 {
 
 		System.out.println("Preparando pruebas....");
 
-		FUNCIONES = new FUNCIONES();
+		funcioness = new funcioness();
 
 	}
 
@@ -53,7 +53,7 @@ public class Prueba5 {
 
 		System.out.println("Pruebas realizadas correctamente");
 
-		FUNCIONES = null;
+		funcioness = null;
 
 	}
 
@@ -61,7 +61,7 @@ public class Prueba5 {
 	@DisplayName("TEST DE CAJA NEGRA(SUMA))")
 
 	void prueba1Funcion5() {
-		assertEquals(9, FUNCIONES.Entornos5("+", 3, 6));
+		assertEquals(9, funcioness.Entornos5("+", 3, 6));
 		// MEDIANTE ESTE TEST COMPROBAMOS QUE AL INTRODUCIR EL STRING(+) Y DOS NUMEROS
 		// NOS REALICE LA SUMA
 	}
@@ -70,7 +70,7 @@ public class Prueba5 {
 	@DisplayName(" TEST DE CAJA NEGRA (RESTA)")
 
 	void prueba2Funcion5() {
-		assertEquals(8, FUNCIONES.Entornos5("-", 10, 2));
+		assertEquals(8, funcioness.Entornos5("-", 10, 2));
 
 		// MEDIANTE ESTE TEST PROBAMOS QUE SI INTRODUCIMOS DOS NUMEROS Y EL STRING(-)
 		// NOS REALIZARA LA RESTA DE AMBOS NUMEROS
@@ -81,7 +81,7 @@ public class Prueba5 {
 	@DisplayName("TEST DE CAJA NEGRA (RECIBIR UN CARACTER NO VALIDO)")
 
 	void prueba3Funcion5() {
-		assertEquals(0, FUNCIONES.Entornos5("M", 3, 3));
+		assertEquals(0, funcioness.Entornos5("M", 3, 3));
 		// MEDIANTE ESTE TEST PROBAMOS QUE SI INTRODUCIMOS UN CARACTER QUE NO SEA + - *
 		// ENTONCES NOS DEVUEVA 0.
 
@@ -91,7 +91,7 @@ public class Prueba5 {
 	@DisplayName("TEST DE CAJA NEGRA (RECIBIR UN CARACTER VACIO)")
 
 	void prueba4Funcion5() {
-		assertEquals(0, FUNCIONES.Entornos5("", 3, 3));
+		assertEquals(0, funcioness.Entornos5("", 3, 3));
 		// MEDIANTE ESTE TEST PROBAMOS QUE SI NO INTRODUCIOMOS UN CARACTER NOS DEVUELVE 0
 	
 
@@ -101,7 +101,7 @@ public class Prueba5 {
 	@DisplayName("CAJA BLANCA DE CONDICIONES ")
 
 	void prueba5Funcion5() {
-		assertEquals(9, FUNCIONES.Entornos5("*", 3, 3));
+		assertEquals(9, funcioness.Entornos5("*", 3, 3));
 
 		// MEDIANTE ESTE TEST PROBAMOS QUE LA CONDICION DE QUE SI INSERTAMOS UN
 		// STRING(*) Y DOS NUMEROS (3,3).
@@ -112,7 +112,7 @@ public class Prueba5 {
 	@DisplayName("CAJA BLANCA DE CONDICIONES")
 
 	void prueba6Funcion5() {
-		assertEquals(5, FUNCIONES.Entornos5("-", 10, 5));
+		assertEquals(5, funcioness.Entornos5("-", 10, 5));
 		// MEDIANTE ESTE TEST PROBAMOS QUE LA CONDICION DE QUE SI INSERTAMOS UN
 		// STRING(-) Y DOS NUMEROS (10,5) NOS REALICE LA RESTA
 
@@ -122,7 +122,7 @@ public class Prueba5 {
 	@DisplayName("CAJA NEGRA DE CONDICIONES")
 
 	void prueba7Funcion5() {
-		assertEquals(10, FUNCIONES.Entornos5("+", 7, 3));
+		assertEquals(10, funcioness.Entornos5("+", 7, 3));
 		// MEDIANTE ESTE TEST PROBAMOS QUE SE CUMPLA LA CONDICION DE QUE AL INTRODUCIR
 		// UN STRING (+) Y DOS NUMEROS(7,3) NOS REALICE LA SUMA
 
@@ -132,7 +132,7 @@ public class Prueba5 {
 	@DisplayName("CAJA BLANCA DE CONDICIONES")
 
 	void prueba8Funcion5() {
-		assertEquals(0, FUNCIONES.Entornos5("", 3, 3));
+		assertEquals(0, funcioness.Entornos5("", 3, 3));
 		// MEDIANTE ESTE TEST PROBAMOS QUE SI INTRODUCIMOS UN STRING VACIO("") Y DOS
 		// NUMEROS (3,3) NOS DEVOLVERA CERO YA QUE NO REALIZARA NINGUNA OPERACION
 

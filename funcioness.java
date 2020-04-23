@@ -1,4 +1,4 @@
-package pruebas;
+package PruebasFinal;
 
 public class funcioness {
 

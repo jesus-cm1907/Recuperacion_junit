@@ -17,7 +17,7 @@ public class funcioness {
 	public Boolean Entornos1(String palabra) {
 
 		int contador = 0;
-		int edad = 19;
+		int edad = 18;
 		Boolean result = null;
 
 		for (int i = 0; i < palabra.length(); i++) {

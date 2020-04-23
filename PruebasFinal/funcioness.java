@@ -4,7 +4,7 @@ public class funcioness {
 
 	public static int Entornos3(int[] numerosintroducidos) {
 
-		int miEdad = 19;
+		int miEdad = 18;
 
 		int sumatorio = 0;
 
@@ -65,7 +65,7 @@ public class funcioness {
 	public static Boolean Entornos1(String palabra) {
 
 		int contador = 0;
-		int edad = 19;
+		int edad = 18;
 		Boolean result = null;
 
 		for (int i = 0; i < palabra.length(); i++) {

@@ -1,4 +1,4 @@
-package PruebasFinal;
+package Pruebas;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,22 +14,19 @@ import org.junit.jupiter.api.DisplayName;
 
 import org.junit.jupiter.api.Test;
 
-public class Prueba1 {
-	
-	
-	static  funcioness funcioness = null;
+public class FUNCIONESTest {
+
+	static FUNCIONES funcioness = null;
+
 	static int ejecucionpruebas = 0;
 
-	
-	
-	
 	@BeforeAll
 
 	static void prepararPruebas() {
 
 		System.out.println("Preparando pruebas....");
 
-		 funcioness = new  funcioness();
+		funcioness = new FUNCIONES();
 
 	}
 
@@ -57,95 +54,164 @@ public class Prueba1 {
 
 		System.out.println("Pruebas realizadas correctamente");
 
-		 funcioness = null;
+		funcioness = null;
 
 	}
 
+	/*
+	 * 
+	 * HAY 18 VOCALES POR LO TANTO ENTRARIA
+	 * 
+	 * // DENTRO DEL TRUE YA QUE SE ENCUENTRA EN EL LIMITE DE LA EDAD QUE ES 18.
+	 * 
+	 * 
+	 * 
+	 */
+
 	@Test
 
-	@DisplayName("TEST DE CAJA NEGRA EQUIVALENTE")
+	@DisplayName("TEST DE CAJA NEGRA CON VALORES DE LIMITE INFERIOR ")
 
 	void Prueba1Entornos1() {
 
-		assertEquals(false,  funcioness.Entornos1("Jesus"));
-		// EN ESTA PRUEBA COMPROBAREMOS QUE CUANDO INTRODUCIMOS UN STRING QUE ES MENOR
-		// A LA EDAD NOS DA FALSE .
+		assertEquals(true, funcioness.Entornos1("jesuuuuuuuuuuuuuuuuus"));
+
 	}
+
+	/*
+	 * 
+	 * Hay 17 VOCALES POR LO TANTO NO ENTRARIA
+	 * 
+	 * // DENTRO DEL TRUE PORQUE HA BAJADO EL LIMITE DE LA EDAD QUE ES 18.
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("TEST DE CAJA NEGRA ")
+	@DisplayName("TEST DE CAJA NEGRA CON VALORES DE LIMITES INFERIOR -1 ")
 
 	void Prueba2Entornos1() {
-		assertEquals(true,  funcioness.Entornos1("Hola esta es la segunda prueba que vamos a realizar"));
+
+		assertEquals(false, funcioness.Entornos1("jesuuuuuuuuuuuuuuuus"));
+
 	}
 
-	// EN ESTE TEST LO QUE COMPROBAMOS ES QUE NOS DEVUELVA VERDADERO YA QUE EL
-	// STRING ES MAYOR QUE LA EDAD INTRODUCIDA
+	/*
+	 * 
+	 * COMPROBAMOS QUE DEVUELVE FALSE SI EL VALOR PASADO POR PARAMETRO ES NULL
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("TEST DE CAJA NEGRA  (VALOR NULL)")
+	@DisplayName("TEST DE CAJA NEGRA CON VALORES VACIOS ")
 
 	void Prueba3Entornos1() {
-		assertEquals(null,  funcioness.Entornos1("190863532"));
+
+		assertEquals(false, funcioness.Entornos1(null));
+
 	}
-	// EN ESTE CASO LO QUE HEMOS HECHO ES COMPROBAR QUE CUANDO INTRODUCIMOS UNA CADENA
-	// DE NUMEROS NOS DEVUELVA VALOR NULL PUESTO QUE LO QUE TIENE QUE RECIBIR ES UN STRING.
+
+	/*
+	 * COMPROBAMOS QUE AL INTRODUCIR UN VALOR VACIO NOS DEVOLVERA UN NULL.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("TEST DE CAJA NEGRA")
+	@DisplayName("TEST DE CAJA NEGRA CON VALORES VACIOS")
 
 	void Prueba4Entornos1() {
-		assertNotEquals(false,  funcioness.Entornos1("Hola me llamo Jesus Cansino Molina y esta es el cuarto test"));
+
+		assertNotEquals(null, funcioness.Entornos1(""));
+
 	}
 
-	// CON ESTE TEST COMPROBAMOS QUE AL INTRODUCIR UN STRING MAYOR QUE NUESTRA EDAD,
-	// AL CREAR UN ASSERTNOTEQUALS NO NOS DEBE DEVOLVER FALSE.
+	/*
+	 * 
+	 * LA CONDICION DE QUE LA EDAD ES IGUAL AL NUMERO DE VOCALES DEL STRING
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("CAJA BLANCA DE CONDICIONES")
+	@DisplayName("CAJA BLANCA DE COBERTURA DE CONDICIONES")
 
 	void Prueba5Entornos1() {
-		assertFalse( funcioness.Entornos1("Hola soy Jesus"));
+
+		assertEquals(true, funcioness.Entornos1("Hola soy Jesuuuuuuuuuuuuuuus"));
+
 	}
 
-	// AQUI LO QUE VAMOS A REALIZAR ES  COMPROBAR QUE SI ENTRASE UN
-	// STRING MENOR A LA EDAD SE CUMPLA LA CONDICION Y  NOS DEVUELVA  FALSE.
+	/*
+	 * 
+	 * COMPROBAMOS QUE DEVUELVA FALSE DEBIDO A QUE NO DIFERENCIA ENTREVOCALES
+	 * ACENTUADAS NI MAYUSULAS O MINUSCULAS.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("CAJA BLANCA DE DECISIONES ")
+	@DisplayName("CAJA BLANCA COBERTURA DE DECISIONES ")
 
 	void Prueba6Entornos1() {
-		assertFalse( funcioness.Entornos1("jesus"));
+
+		assertFalse(funcioness.Entornos1("JESÚS"));
+
 	}
 
-//CON ESTE TEST AL TOMAR  LA DECISION DE QUE SI INTRODUCIMOS UN STRING MENOR A LA EDAD NOS DEVOLVERA FALSE
+	/*
+	 * 
+	 * COMPROBAMOS QUE DEVUELVE TRUE SI LA CANTIDAD DE VOCALES EN LA CADENA ES MAYOR
+	 * A MI EDAD(19)
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("CAJA BLANCA DE CONDICIONES")
+	@DisplayName("CAJA BLANCA DE COBERTURA CONDICIONES")
 
 	void Prueba7Entornos1() {
-		assertTrue( funcioness.Entornos1("Hola mi nombre es Jesus Cansino Molina y este es el quinto test"));
+
+		assertTrue(funcioness.Entornos1("Hola mi nombre es Jesus Cansino Molina y este es el quinto test"));
+
 	}
-	// CON ESTE TEST  LO QUE HACEMOS ES
-	// COMPROBAR QUE SI ENTRASE UN STRING MAYOR A LA EDAD SE CUMPLA LA CONDICION Y  NOS DEBE DEVOLVER TRUE
+
+	/*
+	 * 
+	 * COMPROBAMOS QUE NOS DEVUELVE TRUE SI LA CADENA DE VOCALES EN LA CADENA ES
+	 * MAYOR A MI EDAD
+	 * 
+	 * SIN IMPORTA QUE LOS CARACTERES SE ENCUENTREN EN MAYUSCULAS O ACENTUADOS
+	 * 
+	 * 
+	 * 
+	 */
 
 	@Test
 
-	@DisplayName("CAJA BLANCA DE DECISIONES")
+	@DisplayName("CAJA BLANCA DE COBERTURA  DE DECISIONES")
 
 	void Prueba8Entornos1() {
-		assertTrue( funcioness.Entornos1("Hola mi nombre es Jesus Cansino Molina y este es el octavo test"));
+
+		assertTrue(funcioness.Entornos1("HOLA! mi nombre es Jesús Cansino Molina y este es el OCTAVO TEST"));
+
 	}
 
-//EN ESTE CASO LO QUEREMOS ES QUE CON LA DECISION TOMADA NOS DEVUELVA UN VALOR TRUE PARA ELLO DEBEMOS INTRODUCIR UN STRING QUE SEA MAYOR A NUESTRA EDAD.
-
 }
-
-
-

@@ -18,7 +18,7 @@ public class FUNCIONES {
 	public boolean Entornos1(String palabra) {
 
 		int contador = 0;
-		int edad = 19;
+		int edad = 18;
 		boolean result = false;
 		
 		if(palabra == null) {

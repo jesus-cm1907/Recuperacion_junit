@@ -45,25 +45,25 @@ public class FUNCIONESTest {
 	}
 
 	/*
-	 * HAY 19 VOCALES POR LO TANTO ENTRARIA
-	// DENTRO DEL TRUE YA QUE SE ENCUENTRA EN EL LIMITE DE LA EDAD QUE ES 19.
+	 * HAY 18 VOCALES POR LO TANTO ENTRARIA
+	// DENTRO DEL TRUE YA QUE SE ENCUENTRA EN EL LIMITE DE LA EDAD QUE ES 18.
 	 * 
 	 * */
 	@Test
 	@DisplayName("TEST DE CAJA NEGRA CON VALORES DE LIMITE INFERIOR ")
 	void Prueba1Entornos1() {
-		assertEquals(true, funcioness.Entornos1("jesuuuuuuuuuuuuuuuuuus"));
+		assertEquals(true, funcioness.Entornos1("jesuuuuuuuuuuuuuuuuus"));
 	}
 
 	/*
-	 * Hay 18 VOCALES POR LO TANTO NO ENTRARIA
-		// DENTRO DEL TRUE PORQUE HA BAJADO EL LIMITE DE LA EDAD QUE ES 19.	
+	 * Hay 17 VOCALES POR LO TANTO NO ENTRARIA
+		// DENTRO DEL TRUE PORQUE HA BAJADO EL LIMITE DE LA EDAD QUE ES 18.	
 	 * 
 	 * */
 	@Test
 	@DisplayName("TEST DE CAJA NEGRA CON VALORES DE LIMITES INFERIOR -1 ")
 	void Prueba2Entornos1() {
-		assertEquals(false, funcioness.Entornos1("jesuuuuuuuuuuuuuuuuus"));
+		assertEquals(false, funcioness.Entornos1("jesuuuuuuuuuuuuuuuus"));
 	}
 
 	/*

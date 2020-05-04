@@ -1,8 +1,8 @@
-package PruebasFinal;
+package Pruebas;
 
-public class funcioness {
+public class FUNCIONES {
 
-	public funcioness() {
+	public FUNCIONES() {
 
 	}
 
@@ -13,38 +13,41 @@ public class funcioness {
 	 * 
 	 * 
 	 */
-
-	public Boolean Entornos1(String palabra) {
+    
+	
+	public boolean Entornos1(String palabra) {
 
 		int contador = 0;
 		int edad = 18;
-		Boolean result = null;
+		boolean result = false;
+		
+		if(palabra == null) {
+			return false;
+		}
 
 		for (int i = 0; i < palabra.length(); i++) {
-
-			if ((palabra.charAt(i) == 'a') || (palabra.charAt(i) == 'e') || (palabra.charAt(i) == 'i')
-
-					|| (palabra.charAt(i) == 'o' || (palabra.charAt(i) == 'u'))) {
+			
+			//COMPARO CADA CARACTER CON LA VOCAL SIN TILDE
+			if ((palabra.toLowerCase().charAt(i) == 'a') || (palabra.toLowerCase().charAt(i) == 'e') || (palabra.toLowerCase().charAt(i) == 'i')
+					|| (palabra.toLowerCase().charAt(i) == 'o' || (palabra.toLowerCase().charAt(i) == 'u'))) {
 
 				contador++;
-				if (contador >= edad) {
-					result = true;
-				} else {
-					result = false;
-
-				}
-
 			}
+			
+			//COMPARO CADA CARACTER CON LA VOCAL CON TILDE
+			if ((palabra.toLowerCase().charAt(i) == 'á') || (palabra.toLowerCase().charAt(i) == 'é') || (palabra.toLowerCase().charAt(i) == 'í')
+					|| (palabra.toLowerCase().charAt(i) == 'ó' || (palabra.toLowerCase().charAt(i) == 'ú'))) {
 
+				contador++;
+			}
+			
+		}
+		
+		if (contador >= edad) {
+			result = true;
 		}
 
 		return result;
 
 	}
 }
-
-	/**
-	 * 
-	 * FUNCION QUE DADA DOS CADENAS NOS DEVUELVA CUAL TIENE MAS CONSONANTES
-	 * 
-	 */

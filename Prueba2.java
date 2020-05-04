@@ -1,46 +1,35 @@
-package PruebasFinal;
+package Pruebas;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
-
 import org.junit.jupiter.api.AfterEach;
-
 import org.junit.jupiter.api.BeforeAll;
-
 import org.junit.jupiter.api.BeforeEach;
-
 import org.junit.jupiter.api.DisplayName;
 
-public class Prueba2Test {
+public class FUNCIONESTest2 {
 
-	static  funcioness funcioness= null;
+	static FUNCIONES funcioness = null;
 	static int ejecucionpruebas = 0;
 
 	@BeforeAll
-
 	static void prepararPruebas() {
 
 		System.out.println("Preparando pruebas....");
-
-		 funcioness = new  funcioness();
+		funcioness = new FUNCIONES();
 
 	}
 
 	@BeforeEach
-
 	private void EjecutarPruebas() {
 
 		ejecucionpruebas++;
-
 		System.out.println("CARGANDO EL TEST");
 
 	}
 
 	@AfterEach
-
 	private void terminadoPruebas() {
 
 		System.out.println("Se ha ejecutado el test numero...   " + ejecucionpruebas);
@@ -48,87 +37,96 @@ public class Prueba2Test {
 	}
 
 	@AfterAll
-
 	static void finPruebas() {
 
 		System.out.println("Pruebas realizadas correctamente");
-
-		 funcioness= null;
+		funcioness = null;
 
 	}
 
+	
+	/*
+	 * COMPROBAMOS QUE NOS DEVUELVA LA PRIMERA CADENA, LA CUAL POSEE MAYOR CANTIDAS DE CONSONANTES.
+	 * 
+	 * */
 	@Test
-	@DisplayName("TEST DE CAJA NEGRA")
-
+	@DisplayName("TEST DE CAJA NEGRA CON EQUIVALENTES(ENTRADA VALIDA SEA PALABRA1)")
 	void prueba1Entornos2() {
-		assertEquals("murcielago",  funcioness.Entornos2("jesus", "murcielago"));
-		// EN ESTE TEST INTRODUCIMOS DOS CADENAS STRINGS DONDE QUEREMOS QUE NOS DEVUELVA
-		// CUAL TIENE MAS CONSONATES,EN ESTE CASO SERIA MURCIELAGO.
+		assertEquals("murcielago", funcioness.Entornos2("murcielago", "jesus"));
 	}
-
+	
+	/*
+	 * COMPROBAMOS QUE NOS DEVUELVE UN VALOR POR DEFAULT CUANDO LAS DOS CADENAS INGRESADAS SON NULL
+	 * 
+	 * */
 	@Test
-	@DisplayName(" TEST DE CAJA NEGRA2 VALOR NULL")
-
+	@DisplayName(" TEST DE CAJA NEGRA CON  VALOR NULL")
 	void prueba2Entornos2() {
-		assertEquals(null,  funcioness.Entornos2("", ""));
-		// EN ESTE TEST ESTAMOS COMPROBANDO QUE SI INTRODUCIMOS DOS CADENAS VACIAS NOS
-		// DEVUELVE UN NULL PUESTO QUE ESPERA DOS PALABRAS
-
+		assertEquals("No se reconocieron cadenas validas", funcioness.Entornos2(null,null));
 	}
 
+	/*
+	 * PRUEBA DE CAJA NEGRA CON ESPACIOS VACIOS QUE NOS SALDRA UN MENSAJE DICIENDO QUE TIENE EL MISMO NUMERO DE CONSONATES AMBAS PALABRAS.
+	 * 
+	 * */
 	@Test
-	@DisplayName("TEST DE CAJA NEGRA VALOR NULL")
-
+	@DisplayName("TEST DE CAJA NEGRA CON VALORES VACIOS")
 	void prueba3Entornos2() {
-		assertEquals(null,  funcioness.Entornos2("aeiou", "aeei"));
-
-//EN ESTE TEST VEMOS QUE NOS DEVUELVE UN NULL CUANDO INTRODUCIMOS SOLO DOS CADENAS QUE SOLO ESTAN COMPUESTAS POR VOCALES.
-
+		assertEquals("Poseen la misma cantidad de consonantes", funcioness.Entornos2(" ", ""));
 	}
 
+	/*
+	 * COMPROBAMOS QUE NOS DEVUELVA LA SEGUNDA PALABRA QUE TIENE MAS CONSONANTES QUE LA PRIMERA
+	 * 
+	 * */
 	@Test
-	@DisplayName(" TEST DE CAJA NEGRA ")
-
+	@DisplayName(" TEST DE CAJA NEGRA CON EQUIVALENTES(ENTRADA VALIDA QUE RESULTADO SEA LA SEGUNDA PALABRA)  ")
 	void prueba4Entornos2() {
-		assertNotEquals("hola",  funcioness.Entornos2("juguete", "hola"));
-//EN ESTE TEST COMPROBAMOS QUE MEDIANTE UN NOTEQUALS QUE SI LE DECIMOS QUE UNA CADENA MAS PEQUEÑA TIENE MAS CONSONANTE NOS DEBE DAR ERROR 
-
+		assertEquals("antetokoumpo", funcioness.Entornos2("murcielago","antetokoumpo")); 
 	}
 
+	/*
+	 * COMPROBAMOS QUE SE CUMPLE LA CONDICION SI PALABRA2>PALABRA1 RETURN PALABRA2 ES DECIR NOS DEVOLVERA
+	 * LA SEGUNDA PALABRA YA QUE TIENE MAS CONSONANTES
+	 * 
+	 * */
 	@Test
-	@DisplayName("CAJA BLANCA CONDICIONES")
-
+	@DisplayName("CAJA BLANCA COBERTURA DE CONDICIONES")
 	void prueba5Entornos2() {
-		assertEquals("cansino",  funcioness.Entornos2("jesus", "cansino"));
-
-//EN ESTE TEST DE CAJA BLANCA QUEREMOS VER QUE SE CUMPLE LA CONDICION DE QUE SI LA SEGUNDA PALABRA TIENE MAS CONSONANTES NOS DEVUELVA DICHA PALABRA.
+		assertEquals("cansino", funcioness.Entornos2("jesus", "cansino"));
 
 	}
 
+	/*
+	 *  COMPROBAMOS QUE SE CUMPLE LA CONDICION SI PALABRA1>PALABRA2 RETURN PALABRA2 ES DECIR NOS DEVOLVERA 
+	 *  LA SEGUNDA PALABRA YA QUE TIENE MAS CONSONATE.
+	 * 
+	 * */
 	@Test
-	@DisplayName("CAJA BLANCA CONDICIONES")
-
+	@DisplayName("CAJA BLANCA COBERTURA DE CONDICIONES")
 	void prueba6Entornos2() {
-		assertEquals("murcielago",  funcioness.Entornos2("murcielago", "cansino"));
-//EN ESTE CASO HACEMOS LO CONTRARIO COMPROBAMOS QUE SE CUMPLA LA CONDICION DE QUE SI LA PRIMERA PALABRA TIENE MAS CONSONATES NOS DEVUELVA DICHA PALABRA.
-
+		assertEquals("murcielago", funcioness.Entornos2("murcielago", "cansino"));
 	}
 
+	
+	/*
+	 * QUEREMOS LLEVAR ACABO LA DECISION QUE NOS DEVUELVA UN VALOR POR DEFAULT CUANDO LACANTIDAD DE CONSONANTES EN LAS CADENAS SEAN LAS MISMAS
+	 * 
+	 * */
 	@Test
 	@DisplayName("CAJA BLANCA COBERTURA DE DESICIONES")
-
 	void prueba7Entornos2() {
-		assertEquals(null,  funcioness.Entornos2("", ""));
-//MEDIANTE ESTE TEST SE TOMA LA DECISION DE QUE AL DEVOLVER DOS CADENAS VACIAS ESPERAMOS LA REPUESTA COMO RESULTADO DE UN NULL.
-
+		assertEquals("Poseen la misma cantidad de consonantes", funcioness.Entornos2("", ""));
 	}
 
+	/*
+	 * QUEREMOS TOMOR UNA DECISION QUE AL INTRODUCIR EL VALOR DE UNA CADENA COMO NULL NOS DEVUELVA EL VALOR DE LA OTRA COMO RESULTADO
+	 * 
+	 * */
 	@Test
 	@DisplayName("CAJA BLANCA COBERTURA DE DECISIONES")
-
 	void prueba8Entornos2() {
-		assertEquals(null,  funcioness.Entornos2("jesus", "jesus"));
-//EN ESTA PRUEBA LO QUE SE QUIERE OBETENER ES QUE LA DECISION LLEVADA A CABO SEA LA DE DEVOLVERNOS UN RESULTADO NULL YA QUE LOS DOS STRING SON IGUALES Y NO SE PUEDEN COMPARAR.
+		assertEquals("jesus", funcioness.Entornos2(null, "jesus"));
 
 	}
 }

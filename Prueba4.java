@@ -1,50 +1,24 @@
 package Pruebas;
 
-
-
 import org.junit.jupiter.api.Test;
-
-
-
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
 import org.junit.jupiter.api.AfterAll;
-
-
-
 import org.junit.jupiter.api.AfterEach;
-
-
-
 import org.junit.jupiter.api.BeforeAll;
-
-
-
 import org.junit.jupiter.api.BeforeEach;
-
-
-
 import org.junit.jupiter.api.DisplayName;
 
 
 
 public class FUNCIONESTest4 {
 
-
-
 	static FUNCIONES funcioness = null;
-
-
 
 	static int ejecucionpruebas = 0;
 
 
 
 	@BeforeAll
-
-
 
 	static void prepararPruebas() {
 
